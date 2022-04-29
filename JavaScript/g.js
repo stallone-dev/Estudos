@@ -15,10 +15,10 @@ function teste(){
     
         let valores = page.getRange("B3:K20").getValues();
     
-        let b = valores.filter(function(a){if(a[9]=='ignorar'){return a}})
+        let b = valores.filter(a => a[9]=='ignorar')
         ignorados.push(...b)
     
-        let c = valores.filter(function(a){if(a[9]=='COLETAR'){return a}})
+        let c = valores.filter(a => a[9]=='COLETAR')
         coletados.push(...c)
     
       }

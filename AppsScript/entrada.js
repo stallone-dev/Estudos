@@ -8,10 +8,10 @@ const SS = SpreadsheetApp;
 const DD = DriveApp;
 
 const links_GLOBAIS = {
-    monitoramento: "AAA",
+    monitoramento: SS.getActiveSpreadsheet,
     posto_J01: "AAA",
-    posto_EX1: "AAA",
-    posto_WM1: "AAA"
+    posto_EX1: "",
+    posto_WM1: ""
 }
 
 const links_Pastas_Arquivos = {
@@ -20,4 +20,11 @@ const links_Pastas_Arquivos = {
     EX1: "AAA",
     WM1: "AAA",
     WR1: "AAA"
+}
+
+const ajustes_email = {
+    lin_inicial = 3,
+    col_inicial = 2,
+    col_NF      = 3,
+    col_anexos  = 10,
 }

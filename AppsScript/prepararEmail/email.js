@@ -19,7 +19,7 @@ function emailMonitoramento(){
   
       //estilizarDestino(destino);
   
-      PREPARAR_ANEXOS(destino,monits[e].getName().split("_")[0]);
+      PREPARAR_ANEXOS(destino, monits[e].getName().split("_")[0]);
   
     }
   

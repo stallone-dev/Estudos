@@ -23,7 +23,11 @@ function PREPARAR_ANEXOS(Email,Origem){
   AUX_ORGANIZAR_PDFS(Email)
 }
 
-
+/**
+ * Função para coletar os PDFs no Google Drive e anexar em uma planilha
+ * @param {String} GUIA_DESTINO Colocar endereço da página da planilha onde os dados ficarão
+ * @param {String} Pasta ID da pasta que contém os arquivos
+ */
 function AUX_BUSCAR_PDFS(GUIA_DESTINO,Pasta){
   console.log('Executando - BUSCAR_PDFS')
   console.log('Preparando anexos da pasta '+GUIA_DESTINO.getName().toString())

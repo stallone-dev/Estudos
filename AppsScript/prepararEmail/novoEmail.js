@@ -93,7 +93,7 @@ function auxColetarDadosMonit(fonte_dados, destino_dados, identificador, respons
             const obs   = postoJ01[lin][obsJ01];
 
             for(const e in pendentes){
-                if()
+                if(true){}
             }
         }
 

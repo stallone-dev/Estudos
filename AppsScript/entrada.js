@@ -14,6 +14,11 @@ const links_GLOBAIS = {
     posto_WM1: ""
 }
 
+const referencias_GLOBAIS = {
+    monitoramento   = 'Monitoramento',
+    email           = 'Email',
+}
+
 const links_Pastas_Arquivos = {
     J01: "AAA",
     J02: "AAA",

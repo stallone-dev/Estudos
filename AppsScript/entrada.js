@@ -17,6 +17,7 @@ const links_GLOBAIS = {
 const referencias_GLOBAIS = {
     monitoramento   = 'Monitoramento',
     email           = 'Email',
+    responsavel     = 'CONTROLADORIA'
 }
 
 const links_Pastas_Arquivos = {

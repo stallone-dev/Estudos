@@ -1,3 +1,8 @@
+/**
+ * Função de geração de anexos em uma planilha do Google com base em arquivos do Google Drive.
+ * @param {String} planilha_email Planilha onde os dados serão lançados no final.
+ * @param {Object} pasta_arquivos Objeto contendo os IDs a serem comparados
+ */
 function gerarAnexos(planilha_email,pasta_arquivos){
     
     console.log(`Inicializando - GERAR_ANEXOS`);
@@ -18,14 +23,12 @@ function gerarAnexos(planilha_email,pasta_arquivos){
     console.log('Finalizando - GERAR_ANEXOS');
 }
 
-
-
 /**
  * Função para coletar links e atribuí-los a uma matriz simples.
  * @param {String} pasta_arquivos ID da pasta contendo os arquivos
  * @returns {Array<String>} Matriz contendo os links em URL.
  */
-function auxBuscarLinks(pasta_arquivos){
+function auxBuscarLinks(pasta_arquivos,){
     console.warn("Inicializando - BUSCAR_LINKS");
 
     let matrizLinks = [];

@@ -11,7 +11,7 @@ function gerarAnexos(planilha_email,pasta_arquivos){
     let pasta = '';
     Object.keys(pasta_arquivos).forEach((item) => 
         {
-            item == planilha_email.getName() ? pasta = pasta_arquivos[item] : '';
+            item == planilha_email.getName().split("_")[0] ? pasta = pasta_arquivos[item] : '';
         });
 
     pasta = DD.getFolderById(pasta).getFiles(); // Coletando arquivos

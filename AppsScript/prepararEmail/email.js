@@ -67,7 +67,7 @@ function emailMonitoramento(){
     let totalPendencias = [];
     let colSituacao = paginaDados[0].indexOf("STATUS");
     let colAC = paginaDados[0].indexOf("A/C");
-    let dadosJ01 = SpreadsheetApp.openById("1enRwRtXH1qrv5SWJbFB9KTIOfA2EvzylHe6jM7oSt08")
+    let dadosJ01 = SpreadsheetApp.openById("zzzzzzzzSS")
                   .getSheetByName("Pre_Contab").getRange("A2:Y").getValues()
     
     let pendentes = paginaDados.filter(

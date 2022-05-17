@@ -8,16 +8,19 @@ const SS = SpreadsheetApp;
 const DD = DriveApp;
 
 const links_GLOBAIS = {
-    monitoramento: SS.getActiveSpreadsheet,
+    monitoramento: SS.getActiveSpreadsheet(),
     posto_J01: "AAA",
+    posto_J02: 'aaa',
     posto_EX1: "",
-    posto_WM1: ""
+    posto_WM1: "",
+    posto_WR1: '',
 }
 
 const referencias_GLOBAIS = {
     monitoramento   = 'Monitoramento',
     email           = 'Email',
-    responsavel     = 'CONTROLADORIA'
+    responsavel     = 'CONTROLADORIA',
+    posto           = 'Pre_Contab'
 }
 
 const links_Pastas_Arquivos = {

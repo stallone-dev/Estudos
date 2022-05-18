@@ -67,14 +67,14 @@ function auxColetarDadosMonit(fonte_dados, destino_dados, identificador, respons
     const matrizPendencias = [];
 
 
-    const pendentes = fonte_dados.filter(
+    let pendentes = fonte_dados.filter(
         e => e[posicoes.situacaoNF].toString().toUpperCase() === '0 - PENDENTE' 
         && e[0] !== '' 
         && e[posicoes.aosCuidados].toString().toUpperCase() == responsavel
         );  
 
 
-    const recebimento = fonte_dados.filter(
+    let recebimento = fonte_dados.filter(
         e => e[posicoes.situacaoNF].toString().toUpperCase() === '1 - AGUARDANDO RECEBIMENTO' 
         && e[0] !== '' 
         && e[posicoes.aosCuidados].toString().toUpperCase() == responsavel
@@ -86,19 +86,59 @@ function auxColetarDadosMonit(fonte_dados, destino_dados, identificador, respons
         const colNFJ01      = postoJ01[0].indexOf('NF');
         const colCHAVEJ01   = postoJ01[0].indexOf('Chave');
         const obsJ01        = postoJ01[0].indexOf('Situação');
+        const colPendJ01    = postoJ01[0].indexOf('Pendente?');
 
         for(const lin in postoJ01){
-            const pend  = postoJ01[lin][colNFJ01];
+            const pend  = postoJ01[lin][colPendJ01];
             const chave = postoJ01[lin][colCHAVEJ01];
             const obs   = postoJ01[lin][obsJ01];
+            const nota  = postoJ01[lin][colNFJ01]
 
             for(const e in pendentes){
-                if(true){}
+                
+                if(pend == true){
+                    pendentes[e][posicoes.chaveNF] == chave ? pendentes[e][posicoes.situacaoNF] = obs : ''
+                }
+
+                if(obs != '' && pend != trye || pendentes[e][posicoes.situacaoNF] == '0 - Pendente'){
+                    pendentes[e][posicoes.chaveNF] == chave ? pendentes[e][posicoes.situacaoNF] = 'REMOVER' : ''
+                }
+             }
+
+        } // Fim loop Posto
+
+    } // Fim loop J01
+
+
+    const compararRecebimento = destino_dados.getDataRange().getValues();
+    const posicoesDestino = {
+        NF:     compararRecebimento[0].indexOf('Nota Fiscal'),
+        status: compararRecebimento[0].indexOf('Situação')
+    }
+
+    for(const e in compararRecebimento){
+        const nota   = compararRecebimento[e][posicoesDestino.NF];
+        const status = compararRecebimento[e][posicoesDestino.status]
+
+        for(const lin in recebimento){
+            if(status != '0 - Aguardando recebimento' && status != ''){
+                recebimento[lin][posicoes.NF] == nota ? recebimento[lin][posicoes.situacaoNF] = status : ''
             }
+
         }
 
-
     }
+
+
+    function filtarMonit(dados, indice){
+        let resultado = [];
+        for(const e in dados){
+            Object.keys(posicoes).forEach((item) =>{
+                resultado.push([dados[e][posicoes[item]]])
+            })
+        }
+    }
+
 
 
 }
